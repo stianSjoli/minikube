@@ -1,0 +1,26 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: signature-cluster-policy
+spec:
+  validationFailureAction: Audit
+  background: false
+  rules:
+    - name: signature-verification
+        type: Cosign
+        required: true
+        verifyDigest: true
+        mutateDigest: false 
+        repository:
+        imageReferences: 
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "label 'app.kubernetes.io/name' is required"
+        pattern:
+          metadata:
+            labels:
+              app.kubernetes.io/name: "?*"
