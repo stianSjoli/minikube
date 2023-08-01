@@ -1,8 +1,7 @@
 apiVersion: kyverno.io/v1
-kind: Policy
+kind: ClusterPolicy
 metadata:
   name: verify-image
-  namespace: servers
   annotations:
     policies.kyverno.io/title: Verify Image
     policies.kyverno.io/category: Software Supply Chain Security, EKS Best Practices
@@ -26,9 +25,10 @@ spec:
         - resources:
             kinds:
               - Pod
+              - Deployment
       verifyImages:
       - imageReferences:
-        - "pasient0/simple-server"
+        - "docker.io/pasient0/simple-server:*"
         mutateDigest: true
         attestors:
         - entries:
@@ -37,4 +37,4 @@ spec:
                 -----BEGIN PUBLIC KEY-----
                 MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+HywtGB4Hq6u9Ep/f2QEPSErNL0g
                 BuD6kJLPXHWBmByg4OPGpPvmmGK6BO5/cPHfIdtsUheOF5B4HpJFrtn9fg==
-                -----END PUBLIC KEY-----               
+                -----END PUBLIC KEY-----              
