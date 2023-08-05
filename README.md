@@ -1,1 +1,1 @@
-# kyverno-configs
+# Minikube configuration files  
