@@ -20,4 +20,33 @@ Binary Authorization provides software supply-chain security for container-based
       Enter password for private key: ...
 ```
 
+4-6:
+```
+    $ minikube start 
+    $ kubectl create -f https://github.com/kyverno/kyverno/releases/download/v1.10.0/install.yaml
+    $ kubectl apply -f verify_image.yml 
+    $ kubectl apply -f deployment.yml
+```
+
+Change image in deployment to check that only signed images are allowed to run on the cluster: 
+
+replace:
+````
+spec:
+    containers:
+      - name: nginx-server
+        image: docker.io/pasient0/simple-server:signed
+        ports:
+        - containerPort: 80
+```
+with 
+````
+spec:
+    containers:
+      - name: nginx-server
+        image: docker.io/pasient0/simple-server:unsigned
+        ports:
+        - containerPort: 80
+```
+
 
