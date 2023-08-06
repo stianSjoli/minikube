@@ -31,7 +31,7 @@ Binary Authorization provides software supply-chain security for container-based
 Change image in deployment to check that only signed images are allowed to run on the cluster: 
 
 replace:
-````
+```
 spec:
     containers:
       - name: nginx-server
@@ -39,8 +39,10 @@ spec:
         ports:
         - containerPort: 80
 ```
-with 
-````
+
+with: 
+
+```
 spec:
     containers:
       - name: nginx-server
