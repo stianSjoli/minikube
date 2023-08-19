@@ -1,0 +1,109 @@
+{
+  "summary": {
+    "title": minikube threat model"
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "title": "minikube",
+        "thumbnail": "./public/content/images/thumbnail.cia.jpg",
+        "diagramType": "CIA",
+        "id": 0,
+        "$$hashKey": "object:14",
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 347,
+                "y": 247
+              },
+              "angle": 0,
+              "id": "6382916a-b9f3-4128-8ea6-df3478652d4f",
+              "z": 2,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "modelType": "CIA",
+                  "title": "Replace application",
+                  "type": "Integrity",
+                  "description": "It is possible to replace simple server with another application",
+                  "mitigation": "Allow only signed images by approved attestors. Attestor signs with private key and public key is used for verification before deploying application on minikube.",
+                  "threatId": "c7dec3f8-8ca7-42ce-babe-3990c468cbbf",
+                  "$$hashKey": "object:153"
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "simple-server"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 253,
+                "y": 196
+              },
+              "target": {
+                "x": 524,
+                "y": 441
+              },
+              "vertices": [
+                {
+                  "x": 428,
+                  "y": 185
+                },
+                {
+                  "x": 527,
+                  "y": 245
+                },
+                {
+                  "x": 529,
+                  "y": 362
+                }
+              ],
+              "id": "ceaaebe4-8ce8-4c50-a9dd-5b3134672f20",
+              "z": 3,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "\"servers\"",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "attrs": {}
+            }
+          ]
+        },
+        "size": {
+          "height": 590,
+          "width": 985
+        }
+      }
+    ]
+  }
+}
