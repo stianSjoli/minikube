@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: vault
+  namespace: hashicorp-vault
   name: vault
   labels:
-    name: key_vault
+    name: key-vault
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hashicorp_vault
+      app: hashicorp-vault
   template:
     metadata:
       labels:
-        app: key_vault
+        app: key-vault
     spec:
       containers:
-      - name: hashicorp_vault
+      - name: hashicorp-vault
         image: hashicorp/vault
         ports:
         - containerPort: 80
