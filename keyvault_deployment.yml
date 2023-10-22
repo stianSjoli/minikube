@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: key-vault
+        app: hashicorp-vault
     spec:
       containers:
       - name: hashicorp-vault
