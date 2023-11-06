@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: servers
+  namespace: app
   name: nginx-server
   labels:
     name: nginx-server 
@@ -19,4 +19,4 @@ spec:
       - name: nginx-server
         image: docker.io/pasient0/simple-server:signed
         ports:
-        - containerPort: 80
+        - containerPort: 8080
