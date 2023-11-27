@@ -6,6 +6,7 @@ This repository is primarily for my own exploration into cyber security.
 
 The cluster will host applications in a typical virtual multi-team with trust between teams application and namespaces will be one isolation mechanism  [multi-tenancy](https://kubernetes.io/docs/concepts/security/multi-tenancy/). There will be 2 namespaces reserved for common use by the teams, test and production, and one for a operations team with more privileges - platform. 
 
+
 ## Binary authorization 
 
 Binary Authorization provides software supply-chain security for container-based applications by configure a policy that the service enforces when an attempt is made to deploy a container image on one of the supported container-based platforms. The policy will only allow correctly signed images to run on the minkube cluster. In this repo, it is achieved by:
@@ -55,4 +56,13 @@ spec:
         - containerPort: 80
 ```
 
+## ArgoCD
+```
+kubectl apply -n platform -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
 
+check installation:
+
+```
+kubectl get deployments -n platform 
+```
