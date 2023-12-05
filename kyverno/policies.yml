@@ -1,10 +1,10 @@
 apiVersion: v1
-kind: list
+kind: List
 items:
  - apiVersion: kyverno.io/v1
    kind: ClusterPolicy
    metadata:
-   name: image-policy
+    name: image-policy
    spec:
     validationFailureAction: Enforce
     background: false
@@ -15,17 +15,18 @@ items:
         match:
           any:
           - resources:
-            kinds:
-              - Deployment
+              kinds:
+                - Deployment
         verifyImages:
-          - imageReferences:
-            - "pasient0/simple-server*"
+        - imageReferences:
+          - "pasient0/simple-server*"
+          mutateDigest: true
           attestors:
-            - count: 1
-              entries:
-                - keys:
-                  publicKeys: |-
-                    -----BEGIN PUBLIC KEY-----
-                    MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqJAQEYFWsDNULdefuczpAOissdTU
-                    ciKTAszU3RcNalx9xntGQy7ft/gWgDpccnxa9mIP5sTw1kWp4CYBp+T/ZA==
-                    -----END PUBLIC KEY-----                
+          - count: 1
+            entries:
+            - keys:
+                publicKeys: |-
+                  -----BEGIN PUBLIC KEY-----
+                  MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqJAQEYFWsDNULdefuczpAOissdTU
+                  ciKTAszU3RcNalx9xntGQy7ft/gWgDpccnxa9mIP5sTw1kWp4CYBp+T/ZA==
+                  -----END PUBLIC KEY----- 
