@@ -19,7 +19,7 @@ items:
               - Deployment
         verifyImages:
           - imageReferences:
-          - "pasient0/simple-server*"
+            - "pasient0/simple-server*"
           attestors:
             - count: 1
               entries:
