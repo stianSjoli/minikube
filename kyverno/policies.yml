@@ -1,28 +1,31 @@
-apiVersion: kyverno.io/v1
-kind: ClusterPolicy
-metadata:
-  name: image-policy
-spec:
-  validationFailureAction: Enforce
-  background: false
-  webhookTimeoutSeconds: 30
-  failurePolicy: Fail
-  rules:
-    - name: check-image
-      match:
-        any:
-        - resources:
+apiVersion: v1
+kind: list:
+items:
+ - apiVersion: kyverno.io/v1
+   kind: ClusterPolicy
+   metadata:
+   name: image-policy
+   spec:
+    validationFailureAction: Enforce
+    background: false
+    webhookTimeoutSeconds: 30
+    failurePolicy: Fail
+    rules:
+      - name: check-image
+        match:
+          any:
+          - resources:
             kinds:
               - Deployment
-      verifyImages:
-      - imageReferences:
-        - "pasient0/simple-server*"
-        attestors:
-        - count: 1
-          entries:
-          - keys:
-              publicKeys: |-
-                -----BEGIN PUBLIC KEY-----
-                MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqJAQEYFWsDNULdefuczpAOissdTU
-                ciKTAszU3RcNalx9xntGQy7ft/gWgDpccnxa9mIP5sTw1kWp4CYBp+T/ZA==
-                -----END PUBLIC KEY-----                
+        verifyImages:
+          - imageReferences:
+          - "pasient0/simple-server*"
+          attestors:
+            - count: 1
+              entries:
+                - keys:
+                  publicKeys: |-
+                    -----BEGIN PUBLIC KEY-----
+                    MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEqJAQEYFWsDNULdefuczpAOissdTU
+                    ciKTAszU3RcNalx9xntGQy7ft/gWgDpccnxa9mIP5sTw1kWp4CYBp+T/ZA==
+                    -----END PUBLIC KEY-----                
