@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  namespace: hashicorp-vault
-  name: hashicorp-vault
-  labels:
-    name: vault 
