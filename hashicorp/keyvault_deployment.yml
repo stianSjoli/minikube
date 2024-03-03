@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: hashicorp-vault
+  namespace: platform
   name: vault
   labels:
     name: key-vault
