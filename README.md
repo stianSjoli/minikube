@@ -58,11 +58,11 @@ spec:
 
 ## ArgoCD
 ```
-kubectl apply -n platform -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
 check installation:
 
 ```
-kubectl get deployments -n platform 
+kubectl get deployments -n argocd 
 ```
