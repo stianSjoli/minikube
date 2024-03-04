@@ -24,8 +24,9 @@ jobs:
       continue-on-error: true
       with:
         format: sarif
-        outputFile: results.sarif
+        outputFile: results
         severityThreshold: low
+        files: app/deployment.yml
     - name: print sarif
       run: cat results.sarif 
     - name: Upload Kubescape scan results to Github Code Scanning
