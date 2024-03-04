@@ -15,7 +15,7 @@ jobs:
     - uses: kubescape/github-action@main
       continue-on-error: false
       with:  
-        frameworks: NSA, MITRE
+        frameworks: nsa
         verbose: true
         severityThreshold: low
     
