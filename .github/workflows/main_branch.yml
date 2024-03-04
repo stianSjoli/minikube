@@ -1,0 +1,27 @@
+name: main:branch
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+  kubescape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: kubescape/github-action@main
+      continue-on-error: true
+      with:
+        format: sarif
+        outputFile: results.sarif
+    - name: Upload Kubescape scan results to Github Code Scanning
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sarif
