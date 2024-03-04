@@ -6,6 +6,8 @@ This repository is primarily for my own exploration into cyber security.
 
 The cluster will host applications in a typical virtual multi-team with trust between teams application and namespaces will be one isolation mechanism  [multi-tenancy](https://kubernetes.io/docs/concepts/security/multi-tenancy/). There will be 2 namespaces reserved for common use by apps (typically for app-teams), test and production, and one for a operations team with more privileges - platform. There will be one argocd-instance in its own namespace - argocd. The namespaces are defined in namespaces.yml. 
 
+## Kubescape
+Kubescape is run as a github action on main.
 
 ## Binary authorization 
 
