@@ -26,7 +26,6 @@ jobs:
         format: sarif
         outputFile: results.sarif
         severityThreshold: low
-        fixFiles: true
     - name: Upload Kubescape scan results to Github Code Scanning
       uses: github/codeql-action/upload-sarif@v3
       with:
