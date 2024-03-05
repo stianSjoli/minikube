@@ -20,3 +20,8 @@ spec:
         image: hashicorp/vault
         ports:
         - containerPort: 80
+        securityContext:
+          allowPriviliegeEscalation: false
+          runAsGroup: 1000
+          runAsNonRoot: true
+        
