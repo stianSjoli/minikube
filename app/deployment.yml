@@ -19,7 +19,8 @@ spec:
       - name: nginx-server
         image: docker.io/pasient0/simple-server:signed
         securityContext:
-          privileged: true
-          runAsUser: 0
+          allowPriviliegeEscalation: false
+          runAsGroup: 1000
+          runAsNonRoot: true
         ports:
         - containerPort: 8080
