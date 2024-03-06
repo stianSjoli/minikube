@@ -59,12 +59,8 @@ spec:
 ```
 
 ## ArgoCD
+Install on the cluster: 
 ```
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-check installation:
-
-```
-kubectl get deployments -n argocd 
-```
