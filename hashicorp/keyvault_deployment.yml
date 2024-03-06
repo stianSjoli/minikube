@@ -24,4 +24,3 @@ spec:
           allowPriviliegeEscalation: false
           runAsGroup: 1000
           runAsNonRoot: true
-        
