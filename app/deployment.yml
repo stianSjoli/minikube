@@ -19,8 +19,17 @@ spec:
       - name: nginx-server
         image: docker.io/pasient0/simple-server:signed
         securityContext:
-          allowPriviliegeEscalation: false
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: false
           runAsGroup: 1000
           runAsNonRoot: true
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
         ports:
         - containerPort: 8080
+        
