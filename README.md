@@ -1,4 +1,4 @@
-# Minikube configuration files ![PR:branch](https://github.com/stianSjoli/minikube/actions/workflows/pull_request_branch.yml/badge.svg)
+# Minikube configuration files ![pr:branch](https://github.com/stianSjoli/minikube/actions/workflows/pull_request_branch.yml/badge.svg)
 
 This repository is primarily for my own exploration into cyber security.
 
