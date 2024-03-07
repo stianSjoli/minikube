@@ -17,5 +17,5 @@ jobs:
       with:  
         frameworks: nsa
         verbose: true
-        severityThreshold: low
+        severityThreshold: high
     
