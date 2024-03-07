@@ -24,7 +24,7 @@ spec:
           runAsGroup: 1000
           runAsNonRoot: true
           drop:
-            - ALL
+          - ALL
         resources:
           requests:
             memory: "64Mi"
