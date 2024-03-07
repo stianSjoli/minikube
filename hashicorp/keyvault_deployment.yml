@@ -25,8 +25,9 @@ spec:
           allowPrivilegeEscalation: false
           runAsGroup: 1000
           runAsNonRoot: true
-          drop:
-          - ALL
+          capabilities:
+            drop:
+              - ALL
         resources:
           requests:
             memory: "64Mi"
