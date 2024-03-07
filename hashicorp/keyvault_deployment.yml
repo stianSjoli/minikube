@@ -21,6 +21,17 @@ spec:
         ports:
         - containerPort: 80
         securityContext:
+          readOnlyRootFilesystem: true
           allowPrivilegeEscalation: false
-          runAsNonRoot: true
           runAsGroup: 1000
+          runAsNonRoot: true
+          capabilities:
+            drop:
+              - ALL
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

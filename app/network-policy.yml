@@ -5,7 +5,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: nginx
+      app: nginx-server
   ingress:
   - from:
     - podSelector:
